@@ -1,6 +1,7 @@
 #!groovy
 
 pipeline {
+    agent any
     parameters {
         string(name: 'BRANCH_PASSED_OVER', defaultValue: 'defaultvalue',
                 description: 'pass branch value')
