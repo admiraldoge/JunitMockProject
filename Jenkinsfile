@@ -1,31 +1,38 @@
 #!groovy
 pipeline {
     agent any
-    parameters([
-            [
-                    $class: 'ChoiceParameter',
-                    choiceType: 'PT_SINGLE_SELECT',
-                    name: 'Environment',
-                    script: [
-                            $class: 'ScriptlerScript',
-                            scriptlerScriptId:'Environments.groovy'
-                    ]
-            ],
-            [
-                    $class: 'CascadeChoiceParameter',
-                    choiceType: 'PT_SINGLE_SELECT',
-                    name: 'Host',
-                    referencedParameters: 'Environment',
-                    script: [
-                            $class: 'ScriptlerScript',
-                            scriptlerScriptId:'HostsInEnv.groovy',
-                            parameters: [
-                                    [name:'Environment', value: '$Environment']
-                            ]
-                    ]
-            ]
-    ])
     stages {
+        stage('Setup parameters') {
+            steps {
+                script {
+                    properties([
+                            parameters([
+                                    choice(
+                                            choices: ['ONE', 'TWO'],
+                                            name: 'PARAMETER_01'
+                                    ),
+                                    booleanParam(
+                                            defaultValue: true,
+                                            description: '',
+                                            name: 'BOOLEAN'
+                                    ),
+                                    text(
+                                            defaultValue: '''
+                                this is a multi-line 
+                                string parameter example
+                                ''',
+                                            name: 'MULTI-LINE-STRING'
+                                    ),
+                                    string(
+                                            defaultValue: 'scriptcrunch',
+                                            name: 'STRING-PARAMETER',
+                                            trim: true
+                                    )
+                            ])
+                    ])
+                }
+            }
+        }
         stage('checkout') {
             steps {
                 echo 'Pulling from git'
