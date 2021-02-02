@@ -9,17 +9,8 @@ properties([
              name: 'Env',
              script: [
                      $class: 'GroovyScript',
-                     fallbackScript: [
-                             classpath: [],
-                             sandbox: false,
-                             script: 'return[\'Could not get The ' +
-                                     'environemnts\']'
-                     ],
-                     script: [
-                             classpath: [],
-                             sandbox: false,
-                             script: 'return[\'dev\',\'stage\',\'prod\']'
-                     ]
+                     fallbackScript: '',
+                     script: 'return[\'dev\',\'stage\',\'prod\']'
              ]
             ],
             [$class: 'CascadeChoiceParameter',
