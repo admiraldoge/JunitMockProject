@@ -6,8 +6,7 @@ properties([
          description: 'Select the Env Name from the Dropdown List',
          filterLength: 1,
          filterable: false,
-         name: 'Env',
-         randomName: 'choice-parameter-5631314439613978',
+         name: 'lab',
          script: [
                  $class: 'GroovyScript',
                  fallbackScript: [
