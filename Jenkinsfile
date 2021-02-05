@@ -28,7 +28,7 @@ properties([
                           fallbackScript: [
                                   classpath: [],
                                   sandbox: false,
-                                  script: 'return \'<p>No option has been selected</p>\''],
+                                  script: 'return type'],
                           script: [classpath: [], sandbox: false, script: '''switch(type) { 
                                        case \'Customer\': 
                                        return \'<input type="text" value="name"/>\'
