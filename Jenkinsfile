@@ -37,7 +37,7 @@ properties([
                                        case \'Customer and Vehicle\': 
                                        return \'<input type="text" value="name"/>\'
                                        default:
-                                        return \'<p>No option has been selected</p>\'} '''
+                                        return type'''
                           ]
                  ]
                 ]
