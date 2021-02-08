@@ -41,20 +41,14 @@ properties([
 ])
 node {
     stage('checkout') {
-        steps {
-            echo 'Pulling from git'
-        }
+        echo 'Pulling from git'
     }
     stage('Build') {
-        steps {
-            echo 'Building...'
-            sh 'mvn clean install'
-        }
+        echo 'Building...'
+        sh 'mvn clean install'
     }
     stage('Test') {
-        steps {
-            echo 'Running tests'
-            sh 'mvn test'
-        }
+        echo 'Running tests'
+        sh 'mvn test'
     }
 }
