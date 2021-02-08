@@ -18,24 +18,32 @@ properties([
                                   sandbox: false,
                                   script: 'return [\'Customer\', \'Vehicle\', \'Customer and Vehicle\']']]],
                 [$class: 'DynamicReferenceParameter',
-                 choiceType: 'ET_TEXT_BOX',
+                 choiceType: 'ET_FORMATTED_HTML',
                  description: '',
                  name: 'CustomerName',
                  omitValueField: false,
-                 randomName: 'choice-parameter-5385897094462',
+                 randomName: 'choice-parameter-7037574946164',
                  referencedParameters: 'type',
                  script: [$class: 'GroovyScript',
                           fallbackScript: [
                                   classpath: [],
-                                  sandbox: true,
-                                  script: '''return \'No type selected\''''
+                                  sandbox: false,
+                                  script: ''
                           ],
                           script: [
                                   classpath: [],
-                                  sandbox: true,
-                                  script: """if(type.equals("Customer")) {
-                                              return ''
-                                         }"""
+                                  sandbox: false,
+                                  script: '''
+                                        inputBox="<input type=\'text\'>"
+                                        notAvailableInputBox="<input type=\'text\'>"
+                                        if(type.equals("Customer")) {
+                                        return inputBox
+                                        } else if(type.equals("Vehicle")) {
+                                        return notAvailableInputBox
+                                        } else if(type.equals("Customer and Vehicle")) {
+                                        return inputBox
+                                        } 
+                                  '''
                           ]
                  ]
                 ]
