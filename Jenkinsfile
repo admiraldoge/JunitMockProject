@@ -33,7 +33,9 @@ properties([
                           script: [
                                   classpath: [],
                                   sandbox: true,
-                                  script: ''
+                                  script: """if(type.equals("Customer")) {
+                                              return ''
+                                         }"""
                           ]
                  ]
                 ]
