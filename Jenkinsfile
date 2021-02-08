@@ -27,12 +27,12 @@ properties([
                  script: [$class: 'GroovyScript',
                           fallbackScript: [
                                   classpath: [],
-                                  sandbox: false,
-                                  script: ''
+                                  sandbox: true,
+                                  script: '''return \'No type selected\''''
                           ],
                           script: [
                                   classpath: [],
-                                  sandbox: false,
+                                  sandbox: true,
                                   script: '''if(type.equals("Customer")) {
                                               return \'Parameter selected\'
                                          }'''
