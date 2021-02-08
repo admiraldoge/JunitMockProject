@@ -59,6 +59,7 @@ properties([
 node {
     stage('checkout') {
         echo 'Pulling from git'
+        echo parameters.CustomerName
     }
     stage('Build') {
         echo 'Building...'
