@@ -37,13 +37,13 @@ properties([
                                         vappHtml = """
                                         <ul style="list-style-type: none">
                                             <li style="padding: 5px">
-                                            <label>Customer Name</label>
+                                            <label>Name</label>
                                             <input type="text" class="setting-input" name="value">
-                                            <label>Customer Phone</label>
+                                            <label>Phone</label>
                                             <input type="text" class="setting-input" name="value">
-                                            <label>Customer Email</label>
+                                            <label>Email</label>
                                             <input type="text" class="setting-input" name="value">
-                                            <label>Customer ID</label>
+                                            <label>ID</label>
                                             <input type="text" class="setting-input" name="value">
                                           </li>
                                         </ul>
@@ -51,7 +51,50 @@ properties([
                                         error = """
                                         <p>Not available</p>
                                         """
-                                        if(type.equals("Customer")) {
+                                        if(type.equals("Customer") || type.equals("Customer and Vehicle")) {
+                                            return vappHtml
+                                        } else {
+                                            return error
+                                        }
+                                  '''
+                          ]
+                 ]
+                ],
+                [$class: 'DynamicReferenceParameter',
+                 choiceType: 'ET_FORMATTED_HTML',
+                 description: '',
+                 name: 'VehicleData',
+                 omitValueField: true,
+                 randomName: 'choice-parameter-7037574946164',
+                 referencedParameters: 'type',
+                 script: [$class: 'GroovyScript',
+                          fallbackScript: [
+                                  classpath: [],
+                                  sandbox: false,
+                                  script: 'return "<b>Not available</b>"'
+                          ],
+                          script: [
+                                  classpath: [],
+                                  sandbox: true,
+                                  script:  '''
+                                        vappHtml = """
+                                        <ul style="list-style-type: none">
+                                            <li style="padding: 5px">
+                                            <label>VIN</label>
+                                            <input type="text" class="setting-input" name="value">
+                                            <label>Make</label>
+                                            <input type="text" class="setting-input" name="value">
+                                            <label>Year</label>
+                                            <input type="text" class="setting-input" name="value">
+                                            <label>Model</label>
+                                            <input type="text" class="setting-input" name="value">
+                                          </li>
+                                        </ul>
+                                        """
+                                        error = """
+                                        <p>Not available</p>
+                                        """
+                                        if(type.equals("Vehicle") || type.equals("Customer and Vehicle")) {
                                             return vappHtml
                                         } else {
                                             return error
