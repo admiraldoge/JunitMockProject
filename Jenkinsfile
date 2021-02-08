@@ -28,14 +28,15 @@ properties([
                           fallbackScript: [
                                   classpath: [],
                                   sandbox: false,
-                                  script: 'return "<b>Not avalable</b>"'
+                                  script: 'return "<b>Not available</b>"'
                           ],
                           script: [
                                   classpath: [],
                                   sandbox: false,
                                   script: '''
-                                        inputBox = "<input name='CustomerName' class='setting-input' type='text'>"
-                                        notAvailableInputBox="<p>Not available input</p>"
+                                        def inputBox = "<input name='CustomerName' 
+                                        class='setting-input' type='text'>"
+                                        def notAvailableInputBox="<p>Not available input</p>"
                                         if(type.equals("Customer")) {
                                         return inputBox
                                         } else if(type.equals("Vehicle")) {
