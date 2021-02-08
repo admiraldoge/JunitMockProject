@@ -48,8 +48,14 @@ properties([
                                           </li>
                                         </ul>
                                         """
-                                        
-                                        return vappHtml
+                                        error = """
+                                        <p>Not available</p>
+                                        """
+                                        if(type.equals("Customer")) {
+                                            return vappHtml
+                                        } else {
+                                            return error
+                                        }
                                   '''
                           ]
                  ]
@@ -59,7 +65,7 @@ properties([
 node {
     stage('checkout') {
         echo 'Pulling from git'
-        print "DEBUG: parameter foo = ${env.CustomerData}"
+        print "Customer Data = ${env.CustomerData}"
     }
     stage('Build') {
         echo 'Building...'
