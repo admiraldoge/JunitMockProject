@@ -28,10 +28,7 @@ properties([
                           fallbackScript: [
                                   classpath: [],
                                   sandbox: false,
-                                  script: '''
-                                      notAvailableInputBox="<b>Not available input</b>"
-                                      return notAvailableInputBox
-                                  '''
+                                  script: 'return "<b>Not avalable</b>"'
                           ],
                           script: [
                                   classpath: [],
