@@ -20,7 +20,7 @@ properties([
                 [$class: 'DynamicReferenceParameter',
                  choiceType: 'ET_FORMATTED_HTML',
                  description: '',
-                 name: 'CustomerName',
+                 name: 'CustomerData',
                  omitValueField: true,
                  randomName: 'choice-parameter-7037574946164',
                  referencedParameters: 'type',
@@ -59,7 +59,7 @@ properties([
 node {
     stage('checkout') {
         echo 'Pulling from git'
-        echo parameters.CustomerName
+        print "DEBUG: parameter foo = ${env.CustomerData}"
     }
     stage('Build') {
         echo 'Building...'
