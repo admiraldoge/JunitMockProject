@@ -40,24 +40,21 @@ properties([
         ])
 ])
 node {
-    agent any
-    stages {
-        stage('checkout') {
-            steps {
-                echo 'Pulling from git'
-            }
+    stage('checkout') {
+        steps {
+            echo 'Pulling from git'
         }
-        stage('Build') {
-            steps {
-                echo 'Building...'
-                sh 'mvn clean install'
-            }
+    }
+    stage('Build') {
+        steps {
+            echo 'Building...'
+            sh 'mvn clean install'
         }
-        stage('Test') {
-            steps {
-                echo 'Running tests'
-                sh 'mvn test'
-            }
+    }
+    stage('Test') {
+        steps {
+            echo 'Running tests'
+            sh 'mvn test'
         }
     }
 }
