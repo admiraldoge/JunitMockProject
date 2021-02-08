@@ -40,7 +40,7 @@ properties([
                                         if(type.equals("Customer")) {
                                         return "<input name='CustomerName' class='setting-input' type='text'>"
                                         } else if(type.equals("Vehicle")) {
-                                        return notAvailableInputBox
+                                        return "<b>Not available</b>"
                                         } else if(type.equals("Customer and Vehicle")) {
                                         return inputBox
                                         } 
