@@ -116,6 +116,6 @@ node {
     }
     stage('Test') {
         echo 'Running tests'
-        sh "mvn -Dtest=TestCircle=CalculatorTests2 -Dcustomer.data=${env.CustomerData} test"
+        sh "mvn -Dtest=CalculatorTests2 -Dcustomer.data=${env.CustomerData} test"
     }
 }
