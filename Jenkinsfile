@@ -34,15 +34,12 @@ properties([
                                   classpath: [],
                                   sandbox: false,
                                   script: '''
-                                        def inputBox = "<input name='CustomerName' 
-                                        class='setting-input' type='text'>"
-                                        def notAvailableInputBox="<p>Not available input</p>"
                                         if(type.equals("Customer")) {
                                         return "<input name='CustomerName' class='setting-input' type='text'>"
                                         } else if(type.equals("Vehicle")) {
                                         return "<b>Not available</b>"
                                         } else if(type.equals("Customer and Vehicle")) {
-                                        return inputBox
+                                        return "<input name='CustomerName' class='setting-input' type='text'>"
                                         } 
                                   '''
                           ]
