@@ -37,11 +37,18 @@ properties([
                                         vappHtml = """
                                         <ul style="list-style-type: none">
                                             <li style="padding: 5px">
-                                            <label>VAPP_ID</label>
+                                            <label>Customer Name</label>
+                                            <input type="text" class="setting-input" name="value">
+                                            <label>Customer Phone</label>
+                                            <input type="text" class="setting-input" name="value">
+                                            <label>Customer Email</label>
+                                            <input type="text" class="setting-input" name="value">
+                                            <label>Customer ID</label>
                                             <input type="text" class="setting-input" name="value">
                                           </li>
                                         </ul>
                                         """
+                                        
                                         return vappHtml
                                   '''
                           ]
