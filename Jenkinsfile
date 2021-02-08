@@ -33,15 +33,15 @@ properties([
                           script: [
                                   classpath: [],
                                   sandbox: false,
-                                  script: '''
+                                  script: """
                                         if(type.equals("Customer")) {
-                                        return "<input name='CustomerName' class='setting-input' type='text'>"
+                                        return "<input name=\\"value\\" value=\\"${CustomerName}\\" class=\\"setting-input\\" type=\\"text\\">"
                                         } else if(type.equals("Vehicle")) {
                                         return "<b>Not available</b>"
                                         } else if(type.equals("Customer and Vehicle")) {
                                         return "<input name='CustomerName' class='setting-input' type='text'>"
                                         } 
-                                  '''
+                                  """
                           ]
                  ]
                 ]
