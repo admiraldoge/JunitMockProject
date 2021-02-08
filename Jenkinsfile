@@ -21,7 +21,7 @@ properties([
                  choiceType: 'ET_FORMATTED_HTML',
                  description: '',
                  name: 'CustomerName',
-                 omitValueField: false,
+                 omitValueField: true,
                  randomName: 'choice-parameter-7037574946164',
                  referencedParameters: 'type',
                  script: [$class: 'GroovyScript',
