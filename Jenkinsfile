@@ -29,15 +29,10 @@ properties([
                                   classpath: [],
                                   sandbox: false,
                                   script: 'return type'],
-                          script: [classpath: [], sandbox: false, script: '''switch(type) { 
-                                       case \'Customer\': 
-                                       return \'<input type="text" value="name"/>\'
-                                       case \'Vehicle\': 
-                                       return \'<input type="text" value="name"/>\'
-                                       case \'Customer and Vehicle\': 
-                                       return \'<input type="text" value="name"/>\'
-                                       default:
-                                        return type'''
+                          script: [classpath: [], sandbox: false, script:
+                                  '''if(type.equals("Customer")){
+                                      return "<p type=\"text\" value="name">"
+                                  }'''
                           ]
                  ]
                 ]
