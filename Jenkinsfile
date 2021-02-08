@@ -20,7 +20,7 @@ properties([
                 [$class: 'DynamicReferenceParameter',
                  choiceType: 'ET_FORMATTED_HTML',
                  description: 'These are the input values for different inputs according to each case.',
-                 name: '',
+                 name: 'inputs',
                  omitValueField: false,
                  randomName: 'choice-parameter-37159504908864',
                  referencedParameters: 'type',
@@ -28,7 +28,7 @@ properties([
                           fallbackScript: [
                                   classpath: [],
                                   sandbox: false,
-                                  script: 'return type'],
+                                  script: 'return "<p>${type}</p>"'],
                           script: [classpath: [], sandbox: false, script:
                                   '''if(type.equals("Customer")){
                                       return "<p type=\"text\" value="name">"
