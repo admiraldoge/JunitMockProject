@@ -32,7 +32,7 @@ properties([
                           ],
                           script: [
                                   classpath: [],
-                                  sandbox: false,
+                                  sandbox: true,
                                   script:  '''
                                         vappHtml = """
                                         <ul style="list-style-type: none">
