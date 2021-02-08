@@ -33,7 +33,11 @@ properties([
                           script: [
                                   classpath: [],
                                   sandbox: false,
-                                  script:  'return "<input name=\\"value\\" value=\\"${ReactiveRefParam}\\" class=\\"setting-input\\" type=\\"text\\">"'
+                                  script:  '''html=
+                                        \'\'\'
+                                          <input type="range" min="1" max="150" id="nRadius" name="value">
+                                        \'\'\'
+                                        return html'''
                           ]
                  ]
                 ]
