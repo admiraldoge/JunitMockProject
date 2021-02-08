@@ -34,8 +34,8 @@ properties([
                                   classpath: [],
                                   sandbox: false,
                                   script: '''
-                                        inputBox="<input type=\'text\'>"
-                                        notAvailableInputBox="<input type=\'text\'>"
+                                        inputBox = "<input name='value' class='setting-input' type='text'>"
+                                        notAvailableInputBox="<p>Not available input</p>"
                                         if(type.equals("Customer")) {
                                         return inputBox
                                         } else if(type.equals("Vehicle")) {
