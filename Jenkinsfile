@@ -39,7 +39,7 @@ properties([
                 ]
         ])
 ])
-pipeline {
+node {
     agent any
     stages {
         stage('checkout') {
