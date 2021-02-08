@@ -28,7 +28,8 @@ properties([
                           fallbackScript: [
                                   classpath: [],
                                   sandbox: false,
-                                  script: 'return "<p>${type}</p>"'],
+                                  script: 'return "<input name=\\"value\\" class=\\"setting-input\\" type=\\"text\\">"'
+                          ],
                           script: [classpath: [], sandbox: false, script:
                                   '''if(type.equals("Customer")){
                                       return "<p type=\"text\" value="name">"
