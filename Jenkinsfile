@@ -33,11 +33,17 @@ properties([
                           script: [
                                   classpath: [],
                                   sandbox: false,
-                                  script:  '''html=
+                                  script:  '''
+                                        vappHtml = \'\'\'
+                                        <ul style="list-style-type: none">
+                                            <li style="padding: 5px">
+                                            <label>VAPP_ID</label>
+                                            <input type="text" class="setting-input" name="value">
+                                          </li>
+                                        </ul>
                                         \'\'\'
-                                          <input type="range" min="1" max="150" id="nRadius" name="value">
-                                        \'\'\'
-                                        return html'''
+                                        return vappHtml
+                                  '''
                           ]
                  ]
                 ]
