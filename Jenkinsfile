@@ -16,7 +16,7 @@ properties([
                           script: [
                                   classpath: [],
                                   sandbox: false,
-                                  script: 'return [\'Customer\', \'Vehicle\', \'Customer and Vehicle\']']]],
+                                  script: 'return [\'Customer\', \'Vehicle\', \'Appointment\']']]],
                 [$class: 'DynamicReferenceParameter',
                  choiceType: 'ET_FORMATTED_HTML',
                  description: '',
@@ -51,7 +51,7 @@ properties([
                                         error = """
                                         <p>Not available</p>
                                         """
-                                        if(type.equals("Customer") || type.equals("Customer and Vehicle")) {
+                                        if(type.equals("Customer") || type.equals("Appointment")) {
                                             return vappHtml
                                         } else {
                                             return error
@@ -94,7 +94,7 @@ properties([
                                         error = """
                                         <p>Not available</p>
                                         """
-                                        if(type.equals("Vehicle") || type.equals("Customer and Vehicle")) {
+                                        if(type.equals("Vehicle") || type.equals("Appointment")) {
                                             return vappHtml
                                         } else {
                                             return error

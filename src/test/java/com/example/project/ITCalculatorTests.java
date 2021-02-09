@@ -12,6 +12,7 @@ package com.example.project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.example.project.util.ClientWrapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -23,6 +24,7 @@ class ITCalculatorTests {
 	@DisplayName("1 + 1 = 2")
 	void addsTwoNumbers() {
 		Calculator calculator = new Calculator();
+		ClientWrapper clientWrapper = ClientWrapper.newClient();
 		assertEquals(3, calculator.add(1, 1), "1 + 1 should equal 2");
 	}
 
