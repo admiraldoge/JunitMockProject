@@ -12,18 +12,20 @@ package com.example.project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.example.project.util.ClientWrapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-class ITCalculatorTests2 {
+class CalculatorTestsIT {
 
 	@Test
-	@DisplayName("2 + 2 = 4")
+	@DisplayName("1 + 1 = 2")
 	void addsTwoNumbers() {
 		Calculator calculator = new Calculator();
-		assertEquals(5, calculator.add(2, 2), "2 + 2 should equal 4");
+		ClientWrapper clientWrapper = ClientWrapper.newClient();
+		assertEquals(3, calculator.add(1, 1), "1 + 1 should equal 2");
 	}
 
 	@ParameterizedTest(name = "{0} + {1} = {2}")
