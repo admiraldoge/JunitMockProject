@@ -16,7 +16,10 @@ properties([
                           script: [
                                   classpath: [],
                                   sandbox: false,
-                                  script: 'return [\'Customer\', \'Vehicle\', \'Appointment\']']]],
+                                  script: 'return [\'Customer\', \'Vehicle\', \'Appointment\']'
+                          ]
+                 ]
+                ],
                 [$class: 'DynamicReferenceParameter',
                  choiceType: 'ET_FORMATTED_HTML',
                  description: '',
