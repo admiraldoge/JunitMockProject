@@ -23,7 +23,7 @@ class ITCalculatorTests2 {
 	@DisplayName("2 + 2 = 4")
 	void addsTwoNumbers() {
 		Calculator calculator = new Calculator();
-		assertEquals(4, calculator.add(2, 2), "2 + 2 should equal 4");
+		assertEquals(5, calculator.add(2, 2), "2 + 2 should equal 4");
 	}
 
 	@ParameterizedTest(name = "{0} + {1} = {2}")
