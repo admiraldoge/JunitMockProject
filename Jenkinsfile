@@ -105,6 +105,45 @@ properties([
                                   '''
                           ]
                  ]
+                ],
+                [$class: 'DynamicReferenceParameter',
+                 choiceType: 'ET_FORMATTED_HTML',
+                 description: '',
+                 name: 'AppointmentData',
+                 omitValueField: true,
+                 randomName: 'choice-parameter-7037574946164',
+                 referencedParameters: 'type',
+                 script: [$class: 'GroovyScript',
+                          fallbackScript: [
+                                  classpath: [],
+                                  sandbox: false,
+                                  script: 'return "<b>Not available</b>"'
+                          ],
+                          script: [
+                                  classpath: [],
+                                  sandbox: true,
+                                  script:  '''
+                                        vappHtml = """
+                                        <ul style="list-style-type: none">
+                                            <li style="padding: 5px">
+                                            <label>Time</label>
+                                            <input type="text" class="setting-input" name="value">
+                                            <label>Date</label>
+                                            <input type="text" class="setting-input" name="value">
+                                          </li>
+                                        </ul>
+                                        """
+                                        error = """
+                                        <p>Not available</p>
+                                        """
+                                        if(type.equals("Appointment")) {
+                                            return vappHtml
+                                        } else {
+                                            return error
+                                        }
+                                  '''
+                          ]
+                 ]
                 ]
         ])
 ])
@@ -120,6 +159,6 @@ node {
     stage('Test') {
         echo 'Running tests'
         sh "mvn -DrunTests=true -Dit.test=ITCalculatorTests2 -Dcustomer.data=${env.CustomerData} " +
-                "verify"
+                "-Dvehicle.data=${env.VehicleData} -Dappointment.data=${env.AppointmentData} verify"
     }
 }
