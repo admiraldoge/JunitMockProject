@@ -154,7 +154,8 @@ node {
     }
     stage('Test') {
         echo 'Running tests'
-        sh "mvn clean install -DrunTests=true -Dit.test=ITCalculatorTests2 -Dcustomer.data=${env.CustomerData} " +
+        sh "mvn clean install -DrunTests=true -Dit.test=CalculatorTests2IT -Dcustomer.data=${env
+                .CustomerData} " +
                 "-Dvehicle.data=${env.VehicleData} -Dappointment.data=${env.AppointmentData} verify"
     }
 }
