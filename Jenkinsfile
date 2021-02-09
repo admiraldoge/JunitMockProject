@@ -15,7 +15,7 @@ properties([
                                   script: 'return [\'Select a type of test to run.\']'],
                           script: [
                                   classpath: [],
-                                  sandbox: false,
+                                  sandbox: true,
                                   script: 'return [\'Customer\', \'Vehicle\', \'Appointment\']'
                           ]
                  ]
