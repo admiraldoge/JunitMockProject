@@ -152,13 +152,10 @@ node {
         echo 'Pulling from git'
         print "Customer Data = ${env.CustomerData}"
     }
-    stage('Build') {
-        echo 'Building...'
-        sh 'mvn clean install'
-    }
     stage('Test') {
         echo 'Running tests'
-        sh "mvn -DrunTests=true -Dit.test=ITCalculatorTests2 -Dcustomer.data=${env.CustomerData} " +
+        sh "mvn clean install -DrunTests=true -Dit.test=ITCalculatorTests2 -Dcustomer.data=${env
+                .CustomerData} " +
                 "-Dvehicle.data=${env.VehicleData} -Dappointment.data=${env.AppointmentData} verify"
     }
 }
