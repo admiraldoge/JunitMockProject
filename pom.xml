@@ -41,11 +41,6 @@
 					<trimStackTrace>false</trimStackTrace>
 					<redirectTestOutputToFile>true</redirectTestOutputToFile>
 					<reportFormat>plain</reportFormat>
-					<argLine>
-						-Dcustomer.data=${customer.data}
-						-Dvehicle.data=${vehicle.data}
-						-Dappointment.data=${appointment.data}
-					</argLine>
 					<systemProperties>
 						<property>
 							<name>java.util.logging.config.file</name>
