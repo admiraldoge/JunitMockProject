@@ -116,6 +116,6 @@ node {
     }
     stage('Test') {
         echo 'Running tests'
-        sh "mvn -Dtest=CalculatorTests2 -Dcustomer.data=${env.CustomerData} test"
+        sh "mvn runTests=true -Dit.test=ITCalculatorTests2 -Dcustomer.data=${env.CustomerData} test"
     }
 }
